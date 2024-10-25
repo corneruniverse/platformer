@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://rhcmffhlav5y"]
+[gd_scene load_steps=11 format=3 uid="uid://rhcmffhlav5y"]
 
 [ext_resource type="PackedScene" uid="uid://jfntluxtg2ry" path="res://scenes/player.tscn" id="1_s1ah5"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_2bdqe"]
+[ext_resource type="Texture2D" uid="uid://dnwvwi01rr4ff" path="res://assets/sprites/Left.png" id="2_ngot7"]
+[ext_resource type="Texture2D" uid="uid://cnfmrmv77bpin" path="res://assets/sprites/Right.png" id="3_4ivdn"]
+[ext_resource type="PackedScene" uid="uid://cx1781gf64qu3" path="res://scenes/platform.tscn" id="3_ogw6n"]
+[ext_resource type="Texture2D" uid="uid://dilmwtrnhotki" path="res://assets/sprites/Up.png" id="4_gl78j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v2lvr"]
 texture = ExtResource("2_2bdqe")
@@ -177,6 +181,33 @@ sources/0 = SubResource("TileSetAtlasSource_v2lvr")
 [node name="Player" parent="." instance=ExtResource("1_s1ah5")]
 position = Vector2(47, 83)
 
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Player/Camera2D2"]
+position = Vector2(-135, 13)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_ngot7")
+action = "ui_left"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Player/Camera2D2"]
+position = Vector2(80, 13)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_4ivdn")
+action = "ui_right"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Player/Camera2D2"]
+position = Vector2(-135, -57)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_gl78j")
+action = "ui_accept"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Player/Camera2D2"]
+position = Vector2(80, -57)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_gl78j")
+action = "ui_accept"
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -7)
 zoom = Vector2(4, 4)
@@ -200,3 +231,6 @@ shape = SubResource("WorldBoundaryShape2D_hqc10")
 position = Vector2(192, 24)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_ibu2d")
+
+[node name="Platform" parent="." instance=ExtResource("3_ogw6n")]
+position = Vector2(85, 54)
