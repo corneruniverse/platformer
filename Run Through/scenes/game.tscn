@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://rhcmffhlav5y"]
+[gd_scene load_steps=17 format=3 uid="uid://rhcmffhlav5y"]
 
 [ext_resource type="PackedScene" uid="uid://jfntluxtg2ry" path="res://scenes/player.tscn" id="1_s1ah5"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_2bdqe"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxjyo60gjata6" path="res://scenes/coin.tscn" id="7_mwduv"]
 [ext_resource type="PackedScene" uid="uid://b0b6w8o2e7g1" path="res://scenes/killzone.tscn" id="8_ka0v4"]
 [ext_resource type="PackedScene" uid="uid://dnnyajxyhimf4" path="res://scenes/slime.tscn" id="9_kaw24"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="10_rd6dm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v2lvr"]
 texture = ExtResource("2_2bdqe")
@@ -303,3 +304,35 @@ position = Vector2(-244, 92)
 
 [node name="slime" parent="." instance=ExtResource("9_kaw24")]
 position = Vector2(-73, 84)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Falling2" type="Label" parent="Node"]
+offset_left = -629.0
+offset_top = 93.0
+offset_right = -519.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.494118)
+theme_override_fonts/font = ExtResource("10_rd6dm")
+theme_override_font_sizes/font_size = 8
+text = "Falling hurts..."
+
+[node name="Falling" type="Label" parent="Node"]
+offset_left = 201.0
+offset_top = 101.0
+offset_right = 311.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.494118)
+theme_override_fonts/font = ExtResource("10_rd6dm")
+theme_override_font_sizes/font_size = 8
+text = "Falling hurts..."
+
+[node name="Jump" type="Label" parent="Node"]
+offset_left = 63.0
+offset_top = 54.0
+offset_right = 173.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.494118)
+theme_override_fonts/font = ExtResource("10_rd6dm")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump"
