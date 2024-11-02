@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://rhcmffhlav5y"]
+[gd_scene load_steps=18 format=3 uid="uid://rhcmffhlav5y"]
 
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_n6n2d"]
 [ext_resource type="PackedScene" uid="uid://jfntluxtg2ry" path="res://scenes/player.tscn" id="1_s1ah5"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_2bdqe"]
 [ext_resource type="Texture2D" uid="uid://dnwvwi01rr4ff" path="res://assets/sprites/Left.png" id="2_ngot7"]
@@ -217,6 +218,21 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_n6n2d")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = -247.0
+offset_top = 55.0
+offset_right = -137.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.494118)
+theme_override_fonts/font = ExtResource("10_rd6dm")
+theme_override_font_sizes/font_size = 8
+text = "You collected x coins"
+autowrap_mode = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kssua")
