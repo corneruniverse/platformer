@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://rhcmffhlav5y"]
+[gd_scene load_steps=16 format=3 uid="uid://rhcmffhlav5y"]
 
 [ext_resource type="PackedScene" uid="uid://jfntluxtg2ry" path="res://scenes/player.tscn" id="1_s1ah5"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_2bdqe"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dilmwtrnhotki" path="res://assets/sprites/Up.png" id="4_gl78j"]
 [ext_resource type="PackedScene" uid="uid://cxjyo60gjata6" path="res://scenes/coin.tscn" id="7_mwduv"]
 [ext_resource type="PackedScene" uid="uid://b0b6w8o2e7g1" path="res://scenes/killzone.tscn" id="8_ka0v4"]
+[ext_resource type="PackedScene" uid="uid://dnnyajxyhimf4" path="res://scenes/slime.tscn" id="9_kaw24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v2lvr"]
 texture = ExtResource("2_2bdqe")
@@ -176,6 +177,21 @@ sources/0 = SubResource("TileSetAtlasSource_v2lvr")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_brfpq"]
 
+[sub_resource type="Animation" id="Animation_p0cem"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(121, -36)]
+}
+
 [sub_resource type="Animation" id="Animation_vseqx"]
 resource_name = "move"
 length = 1.5
@@ -191,21 +207,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(121, -36), Vector2(175, -36)]
-}
-
-[sub_resource type="Animation" id="Animation_p0cem"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(121, -36)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_20dj7"]
@@ -299,3 +300,6 @@ position = Vector2(-232, 92)
 
 [node name="coin5" parent="Coins" instance=ExtResource("7_mwduv")]
 position = Vector2(-244, 92)
+
+[node name="slime" parent="." instance=ExtResource("9_kaw24")]
+position = Vector2(-73, 84)
