@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://rhcmffhlav5y"]
+[gd_scene load_steps=18 format=3 uid="uid://rhcmffhlav5y"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_n6n2d"]
 [ext_resource type="PackedScene" uid="uid://jfntluxtg2ry" path="res://scenes/player.tscn" id="1_s1ah5"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://b0b6w8o2e7g1" path="res://scenes/killzone.tscn" id="8_ka0v4"]
 [ext_resource type="PackedScene" uid="uid://dnnyajxyhimf4" path="res://scenes/slime.tscn" id="9_kaw24"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="10_rd6dm"]
-[ext_resource type="PackedScene" uid="uid://ntiwst200kqj" path="res://scenes/music.tscn" id="12_rq82n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v2lvr"]
 texture = ExtResource("2_2bdqe")
@@ -353,5 +352,3 @@ theme_override_colors/font_color = Color(0, 0, 0, 0.494118)
 theme_override_fonts/font = ExtResource("10_rd6dm")
 theme_override_font_sizes/font_size = 8
 text = "Space to jump"
-
-[node name="Music" parent="." instance=ExtResource("12_rq82n")]
